@@ -17,6 +17,7 @@
 	<body>
 		<!--背景图片-->
 		<div class="backgroundImage"></div>
+	
 		
 		<!--背景音乐，开始不播放-->
 		<div>
@@ -39,7 +40,39 @@
 	   <!--div style ="text-align: center;">
 	   <p style ="text-align: center;" class="somethingBehind">基于BootStrap框架开发，来自@daonan</p>
 	   </div-->
+	   <div id="live2d-widget">
+	           <canvas id="live2dcanvas">
+	       </div>
 	</body>
     <!--鼠标点击的效果，出现我的老婆们-->
 	<script type="text/javascript" src = "index.js"> </script>
+	<script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
+	<script>
+	    L2Dwidget.init({
+	        "model": {
+	            jsonPath: "https://unpkg.com/live2d-widget-model-shizuku/assets/shizuku.model.json",//这里改模型，前面后面都要改
+	            "scale": 1
+	        },
+	        "display": {
+	            "position": "left",//设置看板娘的上下左右位置
+	            "width": 100,
+	            "height": 175,
+	            "hOffset": 70,
+	            "vOffset": 70
+	        },
+	        "mobile": {
+	            "show": true,
+	            "scale": 0.5
+	        },
+	        "react": {
+	            "opacityDefault": 0.8,//设置透明度
+	            "opacityOnHover": 0.2
+	        }
+	    });
+	    window.onload = function () {
+	        $("#live2dcanvas").attr("style", "position: fixed; opacity: 0.85; left: 170px; bottom: 0px; z-index: 1; pointer-events: none;")
+	    }
+	</script>
+	
 </html>
