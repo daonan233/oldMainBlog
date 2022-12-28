@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html>
+	<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DaoNan's Homepage</title>
+	
+    <link rel ="stylesheet" type ="text/css" href="../css/bootstrap.min.css"/>
+	<link rel ="stylesheet" type ="text/css"  href="index.css"/> 
+	
+	<script src="https://cdn.jsdelivr.cn/npm/jquery@1.12.4/dist/jquery.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+	<script src="../js/bootstrap.min.js" ></script>
+  </head>
+	<body>
+		<!--背景图片-->
+		<div class="backgroundImage"></div>
+	
+		
+		<!--背景音乐，开始不播放-->
+		<div>
+			<audio id="myaudio" loop="loop" preload="auto" autoplay="autoplay">
+			                <source src="music/Beautiful World.mp3" type="audio/mp3" />
+			</audio>
+			       <img id="iconMusic1" class = "iconMusic" src="img/soundPause.png"/>
+		</div>
+		<!--我的头像，会转的哟-->
+		<div class = "round" style ="text-align:center;">
+			<img  src="img/touxiang.jpg" class="titleImage" alt="touxiang">   
+		</div>
+         <div id ="titleName">Dao Nan</div>
+		
+		<!--两个链接-->
+		<div>
+		<a href ="http://daonan233.gitee.io/daonan_homepage/"><div style="text-align:center;" class ="textLink1">个 人 简 介</div></a>
+		<a href ="http://daonan233.gitee.io/blog"><div style="text-align:center;" class ="textLink2">个 人 博 客</div></a>
+		</div>
+
+	   
+	   <div id="live2d-widget">
+	           <canvas id="live2dcanvas">
+	       </div>
+	</body>
+    <!--鼠标点击的效果，出现我的老婆们-->
+	<script type="text/javascript" src = "index.js"> </script>
+	<script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
+	<script>
+	    L2Dwidget.init({
+	        "model": {
+	            jsonPath: "https://unpkg.com/live2d-widget-model-shizuku/assets/shizuku.model.json",//这里改模型，前面后面都要改
+	            "scale": 1
+	        },
+	        "display": {
+	            "position": "left",//设置看板娘的上下左右位置
+	            "width": 100,
+	            "height": 175,
+	            "hOffset": 70,
+	            "vOffset": 70
+	        },
+	        "mobile": {
+	            "show": true,
+	            "scale": 0.5
+	        },
+	        "react": {
+	            "opacityDefault": 0.8,//设置透明度
+	            "opacityOnHover": 0.2
+	        }
+	    });
+	    window.onload = function () {
+	        $("#live2dcanvas").attr("style", "position: fixed; opacity: 0.85; left: 170px; bottom: 0px; z-index: 1; pointer-events: none;")
+	    }
+	</script>
+	<script type="text/javascript" src="./js/snow.js"></script>
+	<script>
+	    snow.down()
+	</script>
+	
+</html>
